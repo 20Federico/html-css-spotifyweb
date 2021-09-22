@@ -1,0 +1,103 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*****************************************
+TAG
+*****************************************/
+body{
+  font-family: 'Montserrat', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+}
+
+/**************************LAYOUT*******************************/
+
+.shell {
+  display: flex;
+  height: calc(100vh - 90px);
+}
+
+.cmds_container {
+  height: 90px;
+  background-color: #282828;
+}
+
+.side_bar {
+  width: 50px;
+  background-color: #000000;
+}
+
+.main_container {
+  width: 100%;
+  background-color: #141922;
+}
+
+.upgrade_bar {
+  height: 90px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.699);
+  padding: 20px 10px;
+  text-align: right;
+}
+
+.nav {
+  padding: 0 20px;
+  text-align: center;
+}
+
+.media_container {
+  padding: 0 20px;
+}
+
+/*****************************************
+CLASSI
+******************************************/
+
+.upgrade_bar > a {
+  color: white;
+  font-weight: bold;
+  padding: 15px 40px;
+  border: 1px solid white;
+  border-radius: 50px;
+}
+
+.nav > ul {
+  list-style: none;
+}
+
+.nav > ul > li {
+  display: inline-block;
+}
+
+.nav > ul > li > a {
+  color: #878787;
+  padding: 20px 10px;
+  font-size: 10px;
+  font-weight: bold;
+  position: relative;
+}
+
+.nav > ul > li:first-child > a::after {
+  content: "";
+  width: 20px;
+  height: 2px;
+  background-color: #ADFF2F;
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/*************************UTILITIES*******************************/
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
