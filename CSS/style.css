@@ -189,7 +189,7 @@ CLASSI
   display: none;
 }
 
-.side_bar_actions img,
+.side_bar_actions li img,
 .side_bar_profile a:first-of-type img {
   filter: brightness(50%);
 }
