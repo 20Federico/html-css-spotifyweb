@@ -12,17 +12,21 @@ body{
   color: white;
 }
 
-a {
-  text-decoration: none;
-  display: inline-block;
-}
-
 h5 {
   margin-bottom: 15px;
 }
 
 h6 {
   color: #878787;
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+}
+
+ul{
+  list-style: none;
 }
 
 /**************************LAYOUT*******************************/
@@ -32,22 +36,31 @@ h6 {
   height: calc(100vh - 90px);
 }
 
-.cmds_container {
-  height: 90px;
-  background-color: #282828;
-}
+/* side bar */
 
 .side_bar {
   width: 50px;
   background-color: #000000;
+  display: flex;
+  flex-direction: column;
 }
+
+.side_bar_actions, .side_bar_profile {
+  flex-shrink: 0;
+}
+
+.side_bar_playlists {
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+/* main container */
 
 .main_container {
   display: flex;
   flex-direction: column;
-  width: 100%;
   background-color: #141922;
-  overflow: auto;
+  width: 100%;
 }
 
 .upgrade_bar {
@@ -65,6 +78,7 @@ h6 {
 
 .media_container {
   padding: 25px 20px;
+  overflow: auto;
 }
 
 .media_section {
@@ -80,24 +94,134 @@ h6 {
 }
 
 .card {
-  width: calc(50% - 10px);
+  width: calc(50% - 5px);
   text-align: center;
+}
+
+.card_img_box {
+  margin-bottom: 20px;
+}
+
+/* cmds container */
+
+.cmds_container {
+  height: 90px;
+  background-color: #282828;
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 99;
+  padding: 0 10px;
+}
+
+.cmds_box_left, .cmds_box_right {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+} 
+
+.cmds_box_right {
+  justify-content: flex-end;
+}
+
+.cmds_box_left > div {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cmds_box_left .song_title {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding-left: 10px;
+  flex-grow: 1;
+  max-width: 100px;
+}
+
+.cmds_box_left_btns {
+  flex-direction: column;
+}
+
+.cmds_box_center {
+  flex-grow: 2;
+  text-align: center;
+  padding: 10px;
+  min-width: 150px;
+}
+
+.player_btns {
+  margin: auto;
+  margin-bottom: 15px;
+  max-width: 190px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.progress_bar_box {
+  display: flex;
+  align-items: center;
 }
 
 /*****************************************
 CLASSI
 ******************************************/
 
+/* side bar */
+
+.side_bar_logo_xs {
+  width: 28px;
+  margin-bottom: 5px;
+}
+
+.side_bar_logo_xl {
+  /* width: ; */
+  /* margin-bottom: ; */
+  display: none;
+}
+
+.side_bar_actions > a, .side_bar_actions ul li a {
+  width: 100%;
+  text-align: center;
+  padding: 5px 0;
+  color: white;
+}
+
+.side_bar_actions ul li a span {
+  display: none;
+}
+
+.side_bar_actions ul img {
+  width: 20px;
+  vertical-align: bottom;
+}
+
+.side_bar_profile a {
+  display: block;
+  text-align: center;
+}
+
+.side_bar_profile a:first-of-type img {
+  width: 12px;
+  padding: 12px 0;
+}
+
+.side_bar_profile a:last-of-type img {
+  width: 25px;
+  background-color: #808080;
+  border-radius: 50%;
+  margin: 10px 0;
+}
+
+/* main container */
+
 .upgrade_bar > a {
   color: white;
   font-weight: bold;
+  font-size: 12px;
   padding: 15px 40px;
   border: 1px solid white;
   border-radius: 50px;
-}
-
-.nav > ul {
-  list-style: none;
 }
 
 .nav > ul > li {
@@ -106,8 +230,8 @@ CLASSI
 
 .nav > ul > li > a {
   color: #878787;
-  padding: 20px 10px;
-  font-size: 10px;
+  padding: 20px 8px;
+  font-size: 11px;
   font-weight: bold;
   position: relative;
 }
@@ -131,19 +255,61 @@ CLASSI
   border-radius: 50%;
 }
 
-.card_img_box {
-  margin-bottom: 20px;
-}
-
 .card img {
   max-width: 100%;
   max-height: 300px;
 }
 
-/*************************UTILITIES*******************************/
+/* cmds container */
 
-.clearfix::after {
-  content: "";
-  display: table;
-  clear: both;
+.cmds_box_left img {
+  width: 28px;
+}
+
+.cmds_box_left h5 {
+  margin-bottom: 1px;
+}
+
+.cmds_box_left i {
+  padding: 4px;
+}
+
+.cmds_box_left span {
+  font-size: 11px;
+}
+
+.cmds_box_center .fa-play-circle {
+  font-size: 30px;
+}
+
+.progress_bar_time {
+  padding: 0 5px;
+  flex-shrink: 0;
+  font-weight: bold;
+  font-size: 11px
+}
+
+.progress_bar {
+  height: 4px;
+  background-color: #5A5A5A;
+}
+
+.progress_bar_box .progress_bar {
+  flex-grow: 1;
+}
+
+.progress_bar_progress {
+  height: 100%;
+  width: 20%;
+  background-color: #C1C1C1;
+}
+
+.cmds_box_right i {
+  padding: 4px;
+}
+
+.cmds_box_right .progress_bar {
+  min-width: 50px;
+  max-width: 115px;
+  flex-grow: 1;
 }
