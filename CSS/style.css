@@ -196,6 +196,18 @@ CLASSI
   color: white;
 }
 
+.side_bar_actions ul li:first-of-type {
+  position: relative;
+}
+
+.side_bar_actions .highlight_bar {
+  height: 100%;
+  width: 4px;
+  background-color: #ADFF2F;
+  position: absolute;
+  display: none;
+}
+
 .side_bar_actions ul li a span {
   display: none;
 }
@@ -381,6 +393,9 @@ CLASSI
     text-align: left;
     margin-left: 20px;
   }
+  .side_bar_actions .highlight_bar {
+    display: initial;
+  }
   .side_bar_playlists {
     visibility: initial;
   }
@@ -394,7 +409,12 @@ CLASSI
 }
 
 @media screen and (min-width: 1000px) {
-  
+  .card {
+    width: calc(25% - 10px);
+  }
+  .cmds_box_left_btns {
+    flex-direction: row;
+  }
 }
 
 @media screen and (min-width: 1440px) {
