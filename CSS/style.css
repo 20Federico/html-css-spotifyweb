@@ -115,6 +115,7 @@ ul{
 
 .card_img_box:hover img {
   filter: brightness(50%);
+  transition: .5s;
 }
 
 /* cmds container */
@@ -386,11 +387,15 @@ CLASSI
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 50px;
-  visibility: hidden;
+  color: rgba(255, 255, 255, 0);
+  z-index: -1;
 }
 
 .card_img_box:hover .fa-play-circle.overlay{
-  visibility: visible;
+  color: white;
+  z-index: 1;
+  transition: color 2s;
+  transition-delay: .3s;
 }
 
 /* cmds container */
