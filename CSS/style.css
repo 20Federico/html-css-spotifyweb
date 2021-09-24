@@ -126,7 +126,6 @@ ul{
   flex-grow: 1;
   display: flex;
   align-items: center;
-  max-width: 25%;
 } 
 
 .cmds_box_right {
@@ -505,6 +504,10 @@ CLASSI
   }
   .side_bar_profile a img {
     margin-right: 10px;
+  }
+  .cmds_box_left,
+  .cmds_box_right {
+    max-width: 25%;
   }
 }
 
